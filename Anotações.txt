@@ -1,0 +1,145 @@
+Resumo das informações obtidas durante o curso de Git/Gihub do Bootcamp e links úteis.
+
+LINKS
+=====
+Download git: https://git-scm.com/downloads
+Documentação git: https://git-scm.com/doc
+Github: https://github.com/jexbarbosa
+linkedin: https://www.linkedin.com/in/eduardo-barbosa-3a279b70/
+
+
+ANOTAÇÕES
+=========
+SISTEMAS DE CONTROLE DE VERSÃO
+Controlam as versões de um arquivo ao longo do tempo.
+> Registra o histórico de atualizações de um arquivo;
+> Gerencia quais foram as alterações, data, autor, etc.;
+> Organização, controle e segurança.
+
+TIPOS DE SISTEMAS DE CONTROLE DE VERSÃO
+Dentre os Sistemas de Controle de versão(VCS), temos:
+>VCS Centralizado(CVCS) = CVS, Subversion
+>VCS Distribuido(DVCS) = Git, Mercurial
+
+VCS DISTRIBUIDO(DVCS)
+Clona o repositório completo, o que inclui o histórico de versões.
+>Cada clone é como um backup;
+>Possibilita um fluxo de trabalho flexível;
+>Possibilidade de trabalhar sem conexão à rede.
+
+O QUE É O GIT?
+Sistema de Controle de Versão Distribuido.
+>Gratuito e Open Source(Código Aberto);
+>Ramificações(Branching) e fusões(Merging) eficientes;
+>Leve e rápido.
+
+O QUE É O GITHUB?
+Plataforma de Hospedagem de códigos para controle de versão com GIT e colaboração.
+>Comunidade ativa;
+>Utilizado Mundialmente;
+>Mascote "Octocat".
+
+CONFIGURANDO O GIT
+1-CONFIGURANDO SEU NOME DE USUÁRIO E E-MAIL(GLOBALMENTE)
+$ git config --global user.name "Nome e Sobrenome"
+$ git config --global user.email "email@dominio.com"
+
+2-CONFIGURANDO O NOME DA BRANCH PADRÃO:
+$ git config --global init.defaultBranch main
+
+AUTENTICAÇÃO VIA TOKEN
+Para gerar um token, acesse sua conta no Github e no menu superior direito, clique em SETTINGS>DEVELOPER SETTINGS>TOKENS(CLASSIC)>GENERATE NEW TOKEN
+
+ARMAZENANDO CREDENCIAIS
+Você pode armazenar suas credenciais para reduzir o número de vezes que você deve digitar seu nome de usuário ou senha.
+>Salvando no cache:
+$ git config --global credential.helper cache
+>Ou permanentemente:
+$ git config --global credential.helper store
+
+AUTENTICAÇÃO VIA CHAVE SSH
+Para adicionar uma Chave SSH, acesse sua conta no Github e no menu superior direito, clique em SETTINGS>SSH AND GPG KEYS>NEW SSH KEY.
+
+CRIANDO E CLONANDO REPOSITÓRIOS
+Existem duas formas de obter um repositório Git na sua máquina:
+1-Transformando um diretório local que não está sob controle de versão, num repositório Git;
+2-Clonando um repositório Git existente.
+
+CRIANDO UM REPOSITÓRIO LOCAL
+Acesse a pasta que deseja transformar em um repositório Git pelo terminal ou clique com o botão direito do mouse e em seguida em "Open Git Bash Here":
+1-Inicialize um repositório Git no diretório escolhido:
+$ git init
+2-Conecte o repositório local com o repositório remoto:
+$ git remote add origin https://github.com/username/nome-do-repositorio.git
+
+CLONANDO UM REPOSITÓRIO
+Para clonar um repositório no Git, acesse o seu repositório no Github e siga os próximos passos:
+1-Em "Code", copie o código HTTPS ou SSH(a depender de como autenticou sua conta)do repositório no Github;
+2-Abra o Git Bash, insira o comando git clone e cole o conteúdo copiado para cloná-lo:
+$ git clone https://github.com/username/nome-do-repositorio.git
+
+CRIANDO UM REPOSITÓRIO REMOTO
+Acesse sua conta do Github, clique no "+" no canto superior direito e em "New Repository":
+1-Insira um nome(obrigatório)e a descrição(opcional);
+2-Coloque uma breve descrição sobre o projeto, esta etapa é opcional;
+3-Defina se o acesso será público ou privado;
+4-Escolha como deseja inicializar seu repositório(se quiser vazio, deixe as opções desmarcadas);
+5-Clique em "Create Repository"e pronto!
+
+SALVANDO ALTERAÇÕES NO REPOSITÓRIO LOCAL
+1-Como criar um commit:
+a)Adicione o conteúdo que deseja inserir no commit:
+$ git add
+b)Crie um commit e adicione uma mensagem descritiva:
+$ git commit - m "mensagem"
+
+DESFAZENDO ALTERAÇÕES NO REPOSITÓRIO LOCAL
+1-Como alterar a mensagem do último commit:
+$ git commit --amend
+2-Alterando a mensagem sem abrir o editor:
+$ git commit --amend -m "Nova Mensagem"
+3-Como desfazer um commit:
+$ git reset
+$ git reset --soft
+$ git reset --mixed
+$ git reset --hard
+
+ENVIANDO ALTERAÇÕES PARA O REPOSITÓRIO REMOTO
+Como enviar as alterações do repositório local para o remoto:
+$ git push
+"Puxar" as alterações do repositório remoto para o local(busca e mescla):
+$ git pull
+
+TRABALHANDO COM BRANCHES
+De maneira simplista, uma Branch(ramo)é uma ramificação do seu projeto.
+>É um ponto móvel para um commit no histórico do repositório;
+>Quando você cria uma nova Branch a partir de outra existente, a nova se inicia apontando para o mesmo commit da Branch que estava quando foi criada.
+$ git branch
+a)Trocar de Branch e criar uma nova:
+$ git checkout -b nova-branch
+b)Deletar uma Branch:
+$ git branch -d nome-da-branch
+c)Ver o último commit de cada Branch:
+$ git branch -v
+
+REFERÊNCIAS - PARA SABER MAIS
+=============================
+
+● Referências:
+○ https://github.blog/2020-12-15-token-authenticationrequirements-for-git-operations/
+○ https://github.blog/2018-03-01-ddos-incident-report/
+○ https://news.microsoft.com/2018/06/04/microsoft-to-acquiregithub-for-7-5-billion/
+○ https://github.blog/2023-03-09-raising-the-bar-for-softwaresecurity-github-2fa-begins-march-13/
+
+Para saber mais
+● Tech Talk: Linus Torvalds on git: https://youtu.be/4XpnKHJAok8
+● ProGit: https://git-scm.com/book/en/v2
+● Markdown: https://docs.github.com/pt/get-started/writingon-github
+● Conventional Commits: https://github.com/conventionalcommits/conventionalcommits.org
+● Chocolatey: https://community.chocolatey.org/packages/git
+● GitHub Desktop: https://desktop.github.com/
+● GitFluence: https://gitfluence.com/
+● My Octocat: https://myoctocat.com/
+● GitHub Pages: https://docs.github.com/en/pages/gettingstarted-with-github-pages
+
+
