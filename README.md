@@ -3,3 +3,6 @@ Repositório de anotações, projetos e listagem das conquistas obtidas durante 
 
 ## Links Úteis
 [Sintaxe Básica Markdown](https://www.markdownguide.org/basic-syntax/)
+
+### Updates
+Inclusão das Anotações do Curso de Git/Github
